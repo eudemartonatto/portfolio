@@ -47,4 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
       formulario.reset();
     });
   }
+
+  // Estado "ativo" persistente para links de contato
+  const linksContato = document.querySelectorAll('.dados-contato a');
+  if (linksContato.length) {
+    linksContato.forEach(link => {
+      link.addEventListener('click', () => {
+        linksContato.forEach(l => l.classList.remove('ativo-contato'));
+        link.classList.add('ativo-contato');
+      });
+    });
+  }
 });

@@ -87,6 +87,38 @@ p { margin: 0 0 16px; color: var(--cor-fg); opacity: .9; }
 }
 .secao .container { padding: 28px; }
 
+/* Links de contato (email, LinkedIn, GitHub) com estilo semelhante ao menu */
+.dados-contato a {
+  color: var(--cor-fg);
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: color .2s ease, opacity .2s ease, text-decoration-color .2s ease, transform .06s ease;
+}
+.dados-contato a:link,
+.dados-contato a:visited {
+  color: var(--cor-fg);
+}
+.dados-contato a:hover {
+  color: var(--cor-primaria);
+  opacity: 1;
+}
+.dados-contato a:active {
+  color: var(--cor-primaria);
+  transform: translateY(1px);
+}
+.dados-contato a.ativo-contato {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  opacity: 1;
+}
+.dados-contato a:focus-visible {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
 /* Grade e cartões */
 .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 .cartao { padding: 32px 18px 18px; position: relative; }
