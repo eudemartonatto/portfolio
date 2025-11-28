@@ -64,6 +64,12 @@ body::after {
   font-weight: 600; opacity: 0.9; transition: color .2s ease, opacity .2s ease;
 }
 .navegacao a:hover { color: var(--cor-primaria); opacity: 1; }
+.navegacao a.ativo {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
 
 h1, h2, h3 { line-height: 1.2; margin: 0 0 16px; }
 h1 { font-size: clamp(28px, 3.8vw, 40px); }
@@ -130,7 +136,14 @@ main {
   height: 100vh;
   overflow: auto;
   padding: 0;
+  /* garante que rolagem por âncoras considere cabeçalho/rodapé fixos */
+  scroll-padding-top: calc(var(--altura-cabecalho) + 8px);
+  scroll-padding-bottom: calc(var(--altura-rodape) + 8px);
 }
+
+/* offsets visuais para não "comer" conteúdo sob cabeçalho/rodapé */
+.secao:first-of-type > .container { margin-top: calc(var(--altura-cabecalho) + 12px); }
+.secao:last-of-type > .container { margin-bottom: calc(var(--altura-rodape) + 12px); }
 
 /* Utilidades */
 .muted { color: var(--cor-muted); }

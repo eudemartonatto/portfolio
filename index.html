@@ -7,18 +7,7 @@
   <link rel="stylesheet" href="fonte/estilos/principal.css">
 </head>
 <body>
-  <header class="cabecalho">
-    <div class="container">
-      <div class="marca">Portfólio</div>
-      <nav class="navegacao">
-        <a href="index.html">Sobre Mim</a>
-        <a href="paginas/formacao.html">Formação</a>
-        <a href="paginas/portfolio.html">Portfólio</a>
-        <a href="paginas/contato.html">Contato</a>
-        <a href="paginas/livro-de-visitas.html">Livro de Visitas</a>
-      </nav>
-    </div>
-  </header>
+  <header class="cabecalho" data-incluir="cabecalho"></header>
 
   <main>
     <section id="sobre" class="secao">
@@ -39,12 +28,9 @@
     </section>
   </main>
 
-  <footer class="rodape">
-    <div class="container">
-      <small>© <span id="ano"></span> Eudemar Tonatto</small>
-    </div>
-  </footer>
+  <footer class="rodape" data-incluir="rodape"></footer>
 
+  <script src="fonte/scripts/incluir.js" defer></script>
   <script src="fonte/scripts/principal.js" defer></script>
 </body>
 </html>
