@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livro de Visitas</title>
+  <link rel="stylesheet" href="../fonte/estilos/principal.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <div class="marca">Portfólio</div>
+      <nav class="navegacao">
+        <a href="../index.html">Sobre Mim</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contato.html">Contato</a>
+        <a href="livro-de-visitas.html">Livro de Visitas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="secao">
+      <div class="container">
+        <h1>Livro de Visitas</h1>
+        <p class="muted">Deixe sua assinatura e mensagem. Os registros ficam salvos apenas neste navegador.</p>
+        <form id="form-livro" class="formulario" autocomplete="on">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+          </div>
+          <button class="botao" type="submit">Assinar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2>Assinaturas</h2>
+        <div id="lista-assinaturas" class="grade"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <small>© <span id="ano"></span> Eudemar Tonatto</small>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    const CHAVE = 'livroVisitas';
+
+    function carregarAssinaturas() {
+      try {
+        const bruto = localStorage.getItem(CHAVE);
+        return bruto ? JSON.parse(bruto) : [];
+      } catch(e) { return []; }
+    }
+
+    function salvarAssinaturas(lista) {
+      localStorage.setItem(CHAVE, JSON.stringify(lista));
+    }
+
+    function escapar(str){
+      return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s]));
+    }
+
+    function renderizar() {
+      const container = document.getElementById('lista-assinaturas');
+      const lista = carregarAssinaturas().slice().reverse();
+      if (!container) return;
+      if (!lista.length) {
+        container.innerHTML = '<p class="muted">Nenhuma assinatura ainda.</p>';
+        return;
+      }
+      container.innerHTML = lista.map(item => `
+        <article class="cartao">
+          <h3>${escapar(item.nome)} <span class="muted" style="font-weight:400;">— ${escapar(item.email)}</span></h3>
+          <p>${escapar(item.mensagem)}</p>
+          <p class="muted" style="margin-top:8px;">${new Date(item.data).toLocaleString()}</p>
+        </article>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      const form = document.getElementById('form-livro');
+      const anoEl = document.getElementById('ano'); if (anoEl) anoEl.textContent = new Date().getFullYear();
+      renderizar();
+      if (form) {
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const nome = form.nome.value.trim();
+          const email = form.email.value.trim();
+          const mensagem = form.mensagem.value.trim();
+          if (!nome || !email || !mensagem) return;
+          const lista = carregarAssinaturas();
+          lista.push({ nome, email, mensagem, data: new Date().toISOString() });
+          salvarAssinaturas(lista);
+          form.reset();
+          renderizar();
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
