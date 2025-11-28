@@ -1,0 +1,124 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+:root {
+  --cor-fundo: #0b1220;
+  --cor-fg: #e5e7eb;
+  --cor-muted: #9aa3b2;
+  --cor-primaria: #6ea8fe;
+  --cor-primaria-hover: #4e8ef2;
+  --vidro-bg: rgba(15, 23, 42, 0.55);
+  --vidro-borda: rgba(148, 163, 184, 0.25);
+  --sombra-vidro: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --raio: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--cor-fg);
+  background: var(--cor-fundo);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Camada de imagem de fundo (configure a URL abaixo) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: center/cover no-repeat;
+  background-image: var(--bg-imagem, url('../imagens/fundo.png'));
+  z-index: -2;
+}
+
+/* Camada de película escura para legibilidade */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.55) 0%,
+    rgba(2, 6, 23, 0.65) 35%,
+    rgba(2, 6, 23, 0.75) 100%
+  );
+  z-index: -1;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.secao { padding: 72px 0; }
+
+/* Cabeçalho translúcido */
+.cabecalho {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--vidro-borda);
+}
+.cabecalho .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.marca { font-weight: 700; letter-spacing: 0.3px; }
+.navegacao a {
+  margin-left: 18px; text-decoration: none; color: var(--cor-fg);
+  font-weight: 600; opacity: 0.9; transition: color .2s ease, opacity .2s ease;
+}
+.navegacao a:hover { color: var(--cor-primaria); opacity: 1; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 16px; }
+h1 { font-size: clamp(28px, 3.8vw, 40px); }
+h2 { font-size: clamp(20px, 2.4vw, 28px); color: var(--cor-fg); opacity: .95; }
+h3 { font-size: clamp(16px, 1.8vw, 20px); color: var(--cor-fg); opacity: .9; }
+p { margin: 0 0 16px; color: var(--cor-fg); opacity: .9; }
+.lista { padding-left: 18px; color: var(--cor-fg); opacity: .9; }
+
+/* Painéis de conteúdo translúcidos */
+.painel, .cartao, .formulario, .dados-contato, .secao .container {
+  background: var(--vidro-bg);
+  border: 1px solid var(--vidro-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-vidro);
+}
+.secao .container { padding: 28px; }
+
+/* Grade e cartões */
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.cartao { padding: 18px; }
+
+/* Formulário */
+.formulario { display: grid; gap: 14px; max-width: 560px; }
+.campo { display: grid; gap: 8px; }
+label { color: var(--cor-muted); font-weight: 600; }
+input, textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--vidro-borda);
+  border-radius: 10px; font: inherit; color: var(--cor-fg);
+  background: rgba(2, 6, 23, 0.35); outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+input::placeholder, textarea::placeholder { color: #aab3c2; opacity: .6; }
+input:focus, textarea:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(110, 168, 254, 0.25);
+  background: rgba(2, 6, 23, 0.45);
+}
+
+/* Botões */
+.botao {
+  display: inline-block; padding: 10px 16px; background: var(--cor-primaria);
+  color: #0b1020; text-decoration: none; border-radius: 10px; border: 1px solid rgba(255,255,255,.1);
+  cursor: pointer; font-weight: 700; letter-spacing: .2px; transition: background .2s ease, transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 20px rgba(110, 168, 254, 0.25);
+}
+.botao:hover { background: var(--cor-primaria-hover); }
+.botao:active { transform: translateY(1px); }
+
+/* Rodapé */
+.rodape { border-top: 1px solid var(--vidro-borda); padding: 24px 0; margin-top: 32px; color: var(--cor-muted); background: rgba(2,6,23,.35); backdrop-filter: blur(8px); }
+
+/* Utilidades */
+.muted { color: var(--cor-muted); }
+
+/* Responsividade */
+@media (max-width: 720px) {
+  .cabecalho .container { height: 64px; }
+  .navegacao a { margin-left: 12px; font-weight: 600; }
+  .secao { padding: 56px 0; }
+  .secao .container { padding: 20px; }
+}

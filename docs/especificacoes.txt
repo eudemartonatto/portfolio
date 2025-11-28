@@ -1,0 +1,114 @@
+
+
+CENTRO UNIVERSITÁRIO INTERNACIONAL UNINTER
+ESCOLA SUPERIOR POLITÉCNICA
+CURSO
+NOME DA DISCIPLINA
+
+
+
+
+
+
+
+
+
+ATIVIDADE PRÁTICA
+
+
+
+
+
+
+
+
+
+
+
+Nome, RU
+
+
+
+
+
+
+
+
+
+
+CIdade-estado
+ANO
+1. LINKS OBRIGATÓRIOS
+1.1. Link do Site Publicado (Hospedagem):
+Exemplo: https://giulianolanes.github.io/TecnoLogica/. 
+OBS: Este link deve abrir o site diretamente no navegador.
+
+1.2. Link do Repositório GitHub:
+Exemplo: https://github.com/GiulianoLanes/TecnoLogica. 
+OBS: Este link deve dar acesso ao código-fonte no repositório público.
+
+
+2. ESTRUTURA DE PASTAS DO PROJETO
+Colar a imagem com do Windows Explorer ou Visual Studio Code mostrando a organização dos arquivos. A imagem deve ficar centralizada no documento conforme exemplo abaixo.
+
+
+
+OBS 1: A imagem acima, que está identificada com uma espécie de carimbo escrito “modelo” em vermelho. Por se tratar de um exemplo deve ser removida. 
+OBS 2: Após remover a imagem acima e cole a sua que não deve conter o carimbo escrito “modelo”.
+
+
+3. PRINTS DAS PÁGINAS/SEÇÕES DO SITE
+IMPORTANTE: Em todos os prints, certifique-se de que o endereço do site esteja visível na barra de navegação do navegador (não pode conter 127.0.0.1 ou localhost). A imagem deve ficar centralizada no documento conforme exemplo abaixo.
+
+3.1. Página/Seção: Sobre Mim
+(Colar print da página "Sobre Mim" aqui)
+
+3.2. Página/Seção: Formação
+(Colar print da página "Formação" aqui)
+
+3.3. Página/Seção: Portfólio
+(Colar print da página "Portfólio" aqui)
+
+3.4. Página/Seção: Contato
+(Colar print da página "Contato" com formulário aqui)
+
+
+4. CÓDIGO-FONTE COMPLETO
+Incluir o código completo abaixo SOMENTE se você NÃO conseguir publicar corretamente seu site na internet. Caso contrário, os prints das páginas são suficientes.
+
+4.1. Nome do arquivo: index.html
+
+html
+(Colar código aqui se necessário)
+
+
+
+4.2 Nome do arquivo: estilo.css
+
+css
+(Colar código aqui se necessário)
+
+
+
+4.3 Nome do arquivo: script.js
+
+javascript
+(Colar código aqui se necessário)
+
+
+OBS: Repetir para todos os arquivos criados.
+
+
+5. OBSERVAÇÕES IMPORTANTES
+5.1. Não há recuperação de trabalhos;
+5.2. Se o link do site não abrir no navegador:  decréscimo de 50% da nota;
+5.3. Link errado: nota zero (sem possibilidade de correção);
+5.4. Código idêntico ao de outro aluno: nota zero.
+
+
+6. CRITÉRIOS DE AVALIAÇÃO
+6.1. 50% da nota: Site publicado e acessível na internet. Igual a 50 pontos.
+6.2. 10% da nota: Código-fonte no repositório Github público. Igual a 10 pontos;
+6.3. 40% da nota: Implementação das 4 seções (10% cada). Igual a 40 pontos;
+
+Total: 100 pontos

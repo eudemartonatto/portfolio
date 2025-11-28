@@ -1,0 +1,84 @@
+Contato
+Rua Maestro Carlos Frank, 3064,
+sob. 13
+(41)988519935 (Home)
+eudemar@hotmail.com
+www.linkedin.com/in/eudemar-
+tonatto-01482447 (LinkedIn)
+Principais competências
+Banco de dados
+Inteligência artificial
+Python
+Languages
+Espanhol
+Inglês
+
+
+Eudemar Tonatto
+Desenvolvedor de Sistemas Sênior
+Curitiba, Paraná, Brasil
+Resumo
+Profissional desde 1987. DBA Oracle e MSSQL, Implantação e
+Administração de Redes. Análise, Coordenação, Treinamento e
+denvolvimento C#, PHP, Javascript, AJAX, UML, Vbscript, Java,
+Delphi, VB, VB.Net, ASP, NodeJS, entre outras. Organização de
+eventos desportivos desde 1992.
+Specialties: Manutenção de Sistemas Críticos
+Experiência
+WinAudio Software
+Desenvolvedor sênior
+janeiro de 2025 - Present (9 meses)
+Curitiba, Paraná, Brasil
+Desenvolvedor de Software, atuando na manutenção e evolução de sistema
+legado de Audiometria em VB6, com foco em confiabilidade, melhorias
+contínuas e integração com novas tecnologias.
+Novi Sistemas
+Desenvolvedor de Software
+março de 2021 - Present (4 anos 7 meses)
+Curitiba, Paraná, Brasil
+Manutenção de sistema ERP legado em Delphi, cobrindo as áreas de BI,
+Industrialização, Financeiro, Comercial e CRM, com uso da biblioteca ACBr
+para automação de emissão de notas fiscais e emissão de boletos bancários.
+Geração dos arquivos bancários de transmissão e importação dos arquivos de
+retorno.
+SPED Fiscal, SCOA (Manaus) e FCI (Ficha de Conteúdo de Importação) com
+a composição e exportação do arquivo de transmissão.
+Consumo de API da Plugnotas para consulta de CNPJ e CPF, com
+importação dos dados do contribuinte direto da Receita Federal.
+Desenvolvimento de querys, stored procedures e views em Firebird
+Manutenção de sistema ERP Web (Vue, Quasar, Adonis, HTML, Javascript,
+NodeJS)
+Page 1 of 3
+Eudemar Tonatto
+Especialista em TI
+novembro de 2011 - Present (13 anos 11 meses)
+Curitiba, Paraná, Brasil
+Empresa própria (MEI), prestadora de serviços de desenvolvimento,
+DBA Oracle e MSSQL, Implantação e Administração de Redes. Análise,
+Coordenação, Treinamento e denvolvimento UML, PHP, Javascript, AJAX,
+Vbscript, Java, Delphi, VB, VB.Net, ASP, ASPX, C#, Java, NodeJS, entre
+outras. Organização de eventos desportivos.
+Indústria Mecânica NTC
+Desenvolvedor de software
+agosto de 2011 - outubro de 2011 (3 meses)
+Desenvolvimento de site ativo (www.ntc.ind.br), em ambiente PHP, MySQL,
+Javascript com técnicas AJAX. A página inicial é atualizada por cadastros
+efetuados no banco de dados pelo sistema de apoio.
+SIMEPAR - Sindicato dos Médicos no Estado do Parana
+Desenvolvedor de software
+março de 2011 - junho de 2011 (4 meses)
+Desenvolvimento de ERP e site ativo (www.simepar.org.br), em ambiente
+PHP, MySQL, Javascript com técnicas AJAX. A página inicial é atualizada por
+cadastros efetuados no banco de dados pelo sistema de gestão.
+Methodo Informática
+Desenvolvedor de software
+novembro de 2005 - abril de 2008 (2 anos 6 meses)
+Caxias do sul, Rio Grande do Sul, Brasil
+Implantação do ERP Corpore RM (TOTVS), com customização utilizando PL/
+SQL (Oracle) e T-SQL (MSSQL), Desenvolvimento de driver de impressão em
+Delphi e manutenção do ERP próprio desenvolvido na linguagem Zim.
+Formação acadêmica
+UNINTER Centro Universitário Internacional
+Ciência de Dados · (janeiro de 2025 - setembro de 2027)
+Polo de Informática de Caxias do Sul - Alfamídia
+Teste de Software · (julho de 2006 - agosto de 2006)
