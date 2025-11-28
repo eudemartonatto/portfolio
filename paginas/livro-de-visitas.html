@@ -47,8 +47,10 @@
 
   <script>
   (function(){
+    // Chave no localStorage
     const CHAVE = 'livroVisitas';
 
+    // Carrega lista persistida (ou vazio)
     function carregarAssinaturas() {
       try {
         const bruto = localStorage.getItem(CHAVE);
@@ -56,31 +58,50 @@
       } catch(e) { return []; }
     }
 
+    // Salva lista no localStorage
     function salvarAssinaturas(lista) {
       localStorage.setItem(CHAVE, JSON.stringify(lista));
     }
 
+    // Escape simples para evitar injeção HTML
     function escapar(str){
       return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s]));
     }
 
+    // Renderiza assinaturas (mais recentes primeiro) + botão remover
     function renderizar() {
       const container = document.getElementById('lista-assinaturas');
-      const lista = carregarAssinaturas().slice().reverse();
+      const listaOriginal = carregarAssinaturas();
       if (!container) return;
-      if (!lista.length) {
+      if (!listaOriginal.length) {
         container.innerHTML = '<p class="muted">Nenhuma assinatura ainda.</p>';
         return;
       }
-      container.innerHTML = lista.map(item => `
+      // Pares item+índice original, invertendo a ordem para exibição
+      const pares = listaOriginal.map((item, idx) => ({ item, idx })).reverse();
+      container.innerHTML = pares.map(({ item, idx }) => `
         <article class="cartao">
+          <button class="remover-circulo" aria-label="Remover" title="Remover" data-indice="${idx}" type="button">×</button>
           <h3>${escapar(item.nome)} <span class="muted" style="font-weight:400;">— ${escapar(item.email)}</span></h3>
           <p>${escapar(item.mensagem)}</p>
           <p class="muted" style="margin-top:8px;">${new Date(item.data).toLocaleString()}</p>
         </article>
       `).join('');
+      // Delegação para remover itens
+      container.onclick = function(e){
+        const btn = e.target.closest('button.remover-circulo');
+        if (!btn) return;
+        const i = Number(btn.getAttribute('data-indice'));
+        const lista = carregarAssinaturas();
+        if (Number.isInteger(i) && i >= 0 && i < lista.length) {
+          lista.splice(i, 1);
+          salvarAssinaturas(lista);
+          renderizar();
+        }
+      };
     }
 
+    // Inicialização: ano, render e submit
     document.addEventListener('DOMContentLoaded', function(){
       const form = document.getElementById('form-livro');
       const anoEl = document.getElementById('ano'); if (anoEl) anoEl.textContent = new Date().getFullYear();

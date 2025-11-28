@@ -89,7 +89,24 @@ p { margin: 0 0 16px; color: var(--cor-fg); opacity: .9; }
 
 /* Grade e cartões */
 .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-.cartao { padding: 18px; }
+.cartao { padding: 32px 18px 18px; position: relative; }
+
+/* Botão de remoção discreto no topo direito do card */
+.remover-circulo {
+  position: absolute; top: 10px; right: 10px;
+  width: 28px; height: 28px; border-radius: 9999px;
+  border: 1px solid rgba(239, 68, 68, 0.7);
+  background: rgba(239, 68, 68, 0.9); /* vermelho */
+  color: #fff; font-weight: 700; font-size: 18px; line-height: 28px;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0.85; padding: 0; user-select: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: opacity .15s ease, transform .06s ease, background .15s ease;
+  z-index: 2;
+}
+.remover-circulo:hover { opacity: 1; background: #dc2626; }
+.remover-circulo:active { transform: translateY(1px); }
+.remover-circulo:focus-visible { outline: 2px solid var(--cor-primaria); outline-offset: 2px; }
 
 /* Formulário */
 .formulario { display: grid; gap: 14px; max-width: 560px; }
