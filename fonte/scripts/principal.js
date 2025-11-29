@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (formulario) {
     formulario.addEventListener('submit', e => {
       e.preventDefault();
-      alert('Mensagem enviada!');
       formulario.reset();
     });
   }
