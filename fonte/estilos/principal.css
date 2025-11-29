@@ -119,6 +119,53 @@ p { margin: 0 0 16px; color: var(--cor-fg); opacity: .9; }
   outline-offset: 2px;
 }
 
+/* Rótulo de WhatsApp ao lado do telefone */
+.rotulo-whatsapp {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.55);
+  color: #bbf7d0;
+  cursor: pointer;
+}
+
+/* Rótulos visuais para outros serviços de contato */
+.rotulo-email,
+.rotulo-linkedin,
+.rotulo-github {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+
+.rotulo-email {
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.55);
+  color: #dbeafe;
+}
+
+.rotulo-linkedin {
+  background: rgba(37, 99, 235, 0.22);
+  border: 1px solid rgba(37, 99, 235, 0.7);
+  color: #bfdbfe;
+}
+
+.rotulo-github {
+  background: rgba(148, 163, 184, 0.25);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+
 /* Grade e cartões */
 .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 .cartao { padding: 32px 18px 18px; position: relative; }
@@ -128,7 +175,6 @@ p { margin: 0 0 16px; color: var(--cor-fg); opacity: .9; }
   position: absolute; top: 10px; right: 10px;
   width: 28px; height: 28px; border-radius: 9999px;
   border: 1px solid rgba(239, 68, 68, 0.7);
-  background: rgba(239, 68, 68, 0.9); /* vermelho */
   color: #fff; font-weight: 700; font-size: 18px; line-height: 28px;
   display: inline-flex; align-items: center; justify-content: center;
   cursor: pointer; opacity: 0.85; padding: 0; user-select: none;

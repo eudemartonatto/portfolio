@@ -57,4 +57,39 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // Rótulo de WhatsApp também dispara o link do telefone
+  const rotuloWhats = document.querySelector('.rotulo-whatsapp');
+  if (rotuloWhats) {
+    rotuloWhats.addEventListener('click', () => {
+      const p = rotuloWhats.closest('p');
+      if (!p) return;
+      const linkTel = p.querySelector('a[href^="https://wa.me/"]');
+      if (!linkTel) return;
+      // Marca o telefone como ativo visualmente
+      linksContato.forEach(l => l.classList.remove('ativo-contato'));
+      linkTel.classList.add('ativo-contato');
+      // Abre o mesmo destino do link
+      const href = linkTel.getAttribute('href');
+      if (href) window.open(href, linkTel.getAttribute('target') || '_blank');
+    });
+  }
+
+  // Rótulos de Email, LinkedIn e GitHub também disparam seus links
+  function ligarRotuloAoLink(classeRotulo, seletorLink) {
+    const rotulo = document.querySelector(classeRotulo);
+    if (!rotulo) return;
+    rotulo.addEventListener('click', () => {
+      const p = rotulo.closest('p');
+      if (!p) return;
+      const link = p.querySelector(seletorLink);
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (href) window.open(href, link.getAttribute('target') || '_blank');
+    });
+  }
+
+  ligarRotuloAoLink('.rotulo-email', 'a[href^="mailto:"]');
+  ligarRotuloAoLink('.rotulo-linkedin', 'a[href*="linkedin.com/"]');
+  ligarRotuloAoLink('.rotulo-github', 'a[href*="github.com/"]');
 });
