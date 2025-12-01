@@ -20,9 +20,36 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } catch (_) {}
   }
+  function inicializarMenuResponsivo() {
+    const botao = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navegacao');
+    if (!botao || !nav) return;
+    if (botao.dataset.jsInicializado === 'true') return;
+    botao.dataset.jsInicializado = 'true';
+
+    botao.addEventListener('click', () => {
+      const aberto = nav.classList.toggle('aberta');
+      botao.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    });
+
+    const linksMenu = nav.querySelectorAll('a');
+    linksMenu.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 720 && nav.classList.contains('aberta')) {
+          nav.classList.remove('aberta');
+          botao.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
   marcarAtivo();
+  inicializarMenuResponsivo();
   // Reexecuta após os includes injetarem o cabeçalho
-  window.addEventListener('navegacao-atualizada', marcarAtivo);
+  window.addEventListener('navegacao-atualizada', () => {
+    marcarAtivo();
+    inicializarMenuResponsivo();
+  });
 
   // Rolagem suave para âncoras internas
   const linksNavegacao = document.querySelectorAll('a[href^="#"]');

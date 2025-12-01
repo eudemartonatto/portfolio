@@ -59,6 +59,28 @@ body::after {
 }
 .cabecalho .container { display: flex; align-items: center; justify-content: space-between; height: var(--altura-cabecalho); }
 .marca { font-weight: 700; letter-spacing: 0.3px; }
+.menu-toggle {
+  display: none;
+  width: 36px;
+  height: 32px;
+  padding: 6px;
+  margin-left: auto;
+  border-radius: 8px;
+  border: 1px solid var(--vidro-borda);
+  background: rgba(15, 23, 42, 0.9);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--cor-fg);
+  border-radius: 999px;
+}
 .navegacao a {
   margin-left: 18px; text-decoration: none; color: var(--cor-fg);
   font-weight: 600; opacity: 0.9; transition: color .2s ease, opacity .2s ease;
@@ -248,7 +270,21 @@ main {
 @media (max-width: 720px) {
   .cabecalho .container { height: 64px; }
   :root { --altura-cabecalho: 64px; --altura-rodape: 64px; }
-  .navegacao a { margin-left: 12px; font-weight: 600; }
+  .menu-toggle { display: flex; }
+  .navegacao {
+    position: absolute;
+    top: var(--altura-cabecalho);
+    right: 0;
+    left: 0;
+    background: var(--vidro-bg);
+    border-bottom: 1px solid var(--vidro-borda);
+    padding: 12px 20px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .navegacao.aberta { display: flex; }
+  .navegacao a { margin: 0; font-weight: 600; }
   .secao { padding: 56px 0; }
   .secao .container { padding: 20px; }
 }

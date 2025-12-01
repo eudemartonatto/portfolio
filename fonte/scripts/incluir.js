@@ -21,7 +21,7 @@
       // Fallback mínimo caso o fetch falhe (ex.: teste via file://)
       console.warn('Falha ao carregar include', tipo, 'em', url, e);
       if (tipo === 'cabecalho') {
-        html = '<div class="container">\n  <div class="marca">Portfólio</div>\n  <nav class="navegacao">\n    <a data-caminho="index.html">Sobre Mim</a>\n    <a data-caminho="paginas/formacao.html">Formação</a>\n    <a data-caminho="paginas/portfolio.html">Portfólio</a>\n    <a data-caminho="paginas/contato.html">Contato</a>\n    <a data-caminho="paginas/livro-de-visitas.html">Livro de Visitas</a>\n  </nav>\n</div>';
+        html = '<div class="container">\n  <div class="marca">Portfólio</div>\n  <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">\n    <span></span>\n    <span></span>\n    <span></span>\n  </button>\n  <nav class="navegacao">\n    <a data-caminho="index.html">Sobre Mim</a>\n    <a data-caminho="paginas/formacao.html">Formação</a>\n    <a data-caminho="paginas/portfolio.html">Portfólio</a>\n    <a data-caminho="paginas/contato.html">Contato</a>\n    <a data-caminho="paginas/livro-de-visitas.html">Livro de Visitas</a>\n  </nav>\n</div>';
       } else if (tipo === 'rodape') {
         html = '<div class="container">\n  <small>© <span id="ano"></span> Eudemar Tonatto</small>\n</div>';
       }
